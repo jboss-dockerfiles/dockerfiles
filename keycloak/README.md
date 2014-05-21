@@ -3,5 +3,5 @@
 This is a set of Docker images related to Keycloak. 
 
 - Auth server
-- Samples (coming soon)
+- Examples, which includes the Auth server
 
