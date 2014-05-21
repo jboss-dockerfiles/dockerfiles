@@ -14,7 +14,7 @@ You can assume that running following command should build the image for you:
 
     docker build --rm=true .
 
-    If it fails, please take a look at the `README.md`, there may be some instructions how to build it. If you think you found an issue -- [let us know](https://github.com/jboss/dockerfiles/issues/new).
+If it fails, please take a look at the `README.md`, there may be some instructions how to build it. If you think you found an issue -- [let us know](https://github.com/jboss/dockerfiles/issues/new).
 
 ### Running
 
