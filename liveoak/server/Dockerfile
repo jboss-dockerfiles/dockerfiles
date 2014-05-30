@@ -5,10 +5,7 @@ FROM fedora
 RUN yum -y update
 
 # Install java
-RUN yum -y install java-1.8.0-openjdk-devel wget
-
-# Clean the metadata
-RUN yum clean all
+RUN yum -y install java-1.8.0-openjdk-devel wget && yum clean all
 
 # Add the LiveOak distribution to /opt
 RUN cd /opt && wget http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha01/liveoak-dist-1.0.0.Alpha01.tar.gz && tar -zxf liveoak-dist-1.0.0.Alpha01.tar.gz
