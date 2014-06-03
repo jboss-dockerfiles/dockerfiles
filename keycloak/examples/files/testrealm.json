@@ -1,10 +1,12 @@
 {
-    "id": "demo",
     "realm": "demo",
     "enabled": true,
-    "accessTokenLifespan": 3000,
-    "accessCodeLifespan": 10,
-    "accessCodeLifespanUserAction": 6000,
+    "accessTokenLifespan": 60,
+    "accessCodeLifespan": 60,
+    "accessCodeLifespanUserAction": 300,
+    "ssoSessionIdleTimeout": 600,
+    "ssoSessionMaxLifespan": 36000,
+    "passwordCredentialGrantAllowed": true,
     "sslNotRequired": true,
     "registrationAllowed": false,
     "social": false,
@@ -18,6 +20,17 @@
             "enabled": true,
             "email" : "bburke@redhat.com",
             "firstName": "Bill",
+            "lastName": "Burke",
+            "credentials" : [
+                { "type" : "password",
+                    "value" : "password" }
+            ]
+        },
+        {
+            "username" : "admin",
+            "enabled": true,
+            "email" : "admin@admin.com",
+            "firstName": "Admin",
             "lastName": "Burke",
             "credentials" : [
                 { "type" : "password",
@@ -41,6 +54,10 @@
         {
             "username": "bburke@redhat.com",
             "roles": ["user"]
+        },
+        {
+            "username": "admin",
+            "roles": ["user","admin"]
         }
     ],
     "scopeMappings": [
@@ -50,11 +67,23 @@
         },
         {
             "client": "customer-portal",
+            "roles": ["user", "admin" ]
+        },
+        {
+            "client": "customer-portal-js",
+            "roles": ["user"]
+        },
+        {
+            "client": "customer-portal-cli",
+            "roles": ["user"]
+        },
+        {
+            "client": "angular-product",
             "roles": ["user"]
         },
         {
             "client": "product-portal",
-            "roles": ["user"]
+            "roles": ["user", "admin" ]
         }
 
     ],
@@ -73,10 +102,18 @@
             "name": "customer-portal-js",
             "enabled": true,
             "publicClient": true,
-            "adminUrl": "http://localhost:8080/customer-portal-js",
             "baseUrl": "http://localhost:8080/customer-portal-js",
             "redirectUris": [
                 "http://localhost:8080/customer-portal-js/*"
+            ]
+        },
+        {
+            "name": "angular-product",
+            "enabled": true,
+            "publicClient": true,
+            "baseUrl": "http://localhost:8080/angular-product/index.html",
+            "redirectUris": [
+                "http://localhost:8080/angular-product/*"
             ]
         },
         {
@@ -108,6 +145,13 @@
                 "http://localhost:8080/oauth-client-cdi/*"
             ],
             "secret": "password"
+        },
+        {
+            "name": "admin-client",
+            "enabled": true,
+            "publicClient": true,
+            "directGrantsOnly": true
+
         }
     ],
     "applicationRoleMappings": {
@@ -116,7 +160,26 @@
                 "username": "bburke@redhat.com",
                 "roles": ["manage-account"]
             }
+        ],
+        "realm-management": [
+            {
+                "username": "admin",
+                "roles": ["realm-admin"]
+            }
+        ]
+    },
+    "applicationScopeMappings": {
+        "realm-management": [
+            {
+                "client": "admin-client",
+                "roles": ["realm-admin"]
+            },
+            {
+                "client": "customer-portal",
+                "roles": ["realm-admin"]
+            }
         ]
     }
+
 
 }
