@@ -1,9 +1,6 @@
 # Use latest Fedora image as the base
 FROM fedora
 
-# Upgrade the system
-RUN yum -y update
-
 # Install java
 RUN yum -y install java-1.7.0-openjdk-devel
 
