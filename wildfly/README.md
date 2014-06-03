@@ -10,14 +10,14 @@ To boot in standalone mode
 
 To boot in domain mode
 
-    docker run -it jboss/wildfly /opt/wildfly-8.1.0.CR2/bin/domain.sh -b 0.0.0.0 -bmanagement 0.0.0.0
+    docker run -it jboss/wildfly /opt/wildfly/bin/domain.sh -b 0.0.0.0 -bmanagement 0.0.0.0
 
 ## Extending the image
 
 To be able to create a management user to access the administration console create a Dockerfile with the following content
 
     FROM jboss/wildfly
-    RUN /opt/wildfly-8.1.0.CR2/bin/add-user.sh admin Admin#70365 --silent
+    RUN /opt/wildfly/bin/add-user.sh admin Admin#70365 --silent
 
 Then you can build the image:
 
