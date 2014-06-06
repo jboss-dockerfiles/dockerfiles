@@ -1,5 +1,4 @@
-# FROM jboss/wildfly
-FROM goldmann/wildfly
+FROM jboss/wildfly
 MAINTAINER jpkroehling@redhat.com
 
 USER root
