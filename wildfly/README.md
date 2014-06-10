@@ -35,3 +35,6 @@ You don't need to do this on your own, because we prepared a trusted build for t
 
     docker build --rm=true --tag=jboss/wildfly .
 
+## Issues
+
+Please report any issues or file RFEs on [GitHub](https://github.com/jboss/dockerfiles/issues).
