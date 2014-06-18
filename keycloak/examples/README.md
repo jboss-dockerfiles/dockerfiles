@@ -14,6 +14,6 @@ Once it boots, you can login using admin/admin for the first login on the [Auth 
 
 ## Other details
 
-This image inherits from the main Keycloak Auth Server image (jboss/keycloak-server), and deploys the Keycloak artifacts required to start a new authentication server, as well as the examples. Additionally, it configures a testrealm and ships with a custom standalone.xml , with the required changes for an application to authenticate using Keycloak as authentication mechanism. 
+This image inherits from the main [Keycloak Auth Server image](https://registry.hub.docker.com/u/jboss/keycloak/) and deploys the examples, including the test realm used by them. 
 
-Note that you might want to extend the image to make it use a production-ready database and to setup a Wildfly admin password.
+You should not inherit from this image, as it includes a realm that is intended only for testing. If you want to reuse the bits from this image, use the [keycloak image](https://registry.hub.docker.com/u/jboss/keycloak/). 

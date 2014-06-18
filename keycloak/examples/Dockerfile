@@ -1,11 +1,8 @@
-# FROM jboss/keycloak-server
-FROM jpkroehling/keycloak-server
+FROM jboss/keycloak
 MAINTAINER jpkroehling@redhat.com
 
 USER wildfly
 RUN echo 'JAVA_OPTS="$JAVA_OPTS -Dkeycloak.import=/opt/keycloak/testrealm.json"' >> /opt/wildfly/bin/standalone.conf
-RUN cd /opt/wildfly && unzip /opt/keycloak/keycloak-wildfly-adapter-dist-1.0-beta-2.zip
-
 ADD files/testrealm.json /opt/keycloak/testrealm.json
 ADD files/keycloak-standalone-wildfly-8.1.0.Final.xml /opt/wildfly/standalone/configuration/standalone.xml
 ADD files/wars/customer-portal-js.war /opt/wildfly/standalone/deployments/customer-portal-js.war
