@@ -61,6 +61,10 @@ You don't need to do this on your own, because we prepared a trusted build for t
 
     docker build --rm=true --tag=jboss/wildfly .
 
+## Source
+
+The source is [available on GitHub](https://github.com/jboss/dockerfiles/tree/master/wildfly).
+
 ## Issues
 
 Please report any issues or file RFEs on [GitHub](https://github.com/jboss/dockerfiles/issues).
