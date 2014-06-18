@@ -1,4 +1,4 @@
-FROM jboss/keycloak-server
+FROM jboss/keycloak
 MAINTAINER jpkroehling@redhat.com
 
 USER wildfly

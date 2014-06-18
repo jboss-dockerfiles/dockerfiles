@@ -6,7 +6,7 @@ This image prepares a basic Keycloak Auth Server. The right place to start playi
 
 To boot in standalone mode
 
-    docker run -it -p 8080:8080 -p 9090:9090 jboss/keycloak-server
+    docker run -it -p 8080:8080 -p 9090:9090 jboss/keycloak
 
 Once it boots, you can login using admin/admin for the first login. 
 
