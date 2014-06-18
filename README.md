@@ -4,9 +4,9 @@ This repository contains examples of Dockerfiles that can be used to build Docke
 
 ## Usage
 
-### Trusted builds
+### Automated builds
 
-This repository will eventually be hooked with [docker.io trusted builds feature](https://index.docker.io/help/docs/#trustedbuilds). This will ensure that https://index.docker.io/ will always have up to date images. We're working on it.
+This repository is hooked with [docker.io automated builds feature](http://docs.docker.com/docker-hub/builds/). You can find the images under the `jboss` account: https://hub.docker.com/u/jboss/
 
 ### Building locally
 
