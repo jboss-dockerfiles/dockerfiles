@@ -21,6 +21,10 @@ You don't need to do this on your own, because we prepared an [automated build](
 
     docker build --rm=true --tag=jboss/immutant .
 
+## Source
+
+The source is [available on GitHub](https://github.com/jboss/dockerfiles/tree/master/immutant).
+
 ## Issues
 
 Please report any issues or file RFEs on [GitHub](https://github.com/jboss/dockerfiles/issues).
