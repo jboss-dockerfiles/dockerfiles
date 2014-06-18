@@ -8,7 +8,7 @@ RUN yum -y install java-1.7.0-openjdk-devel unzip
 RUN yum clean all
 
 # Add Immutant
-RUN curl -o /opt/immutant.zip https://repository-projectodd.forge.cloudbees.com/release/org/immutant/immutant-dist/1.1.3/immutant-dist-1.1.3-slim.zip
+RUN curl -o /opt/immutant.zip https://d33a59li2db06k.cloudfront.net/release/org/immutant/immutant-dist/1.1.3/immutant-dist-1.1.3-slim.zip
 
 # Unpack it
 RUN unzip -q -d /opt/ /opt/immutant.zip && mv /opt/immutant-1.1.3-slim /opt/immutant && rm /opt/immutant.zip 
