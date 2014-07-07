@@ -1,17 +1,11 @@
 # Use latest Fedora image as the base
 FROM fedora
 
-# Install java
-RUN yum -q -y install java-1.7.0-openjdk-devel wget git && yum -q clean all
-ENV JAVA_HOME /usr/lib/jvm/java-1.7.0-openjdk
+# Install maven, wget, and git
+RUN yum -q -y install maven wget git && yum -q clean all
 
-# Download Maven
-RUN wget -O /tmp/apache-maven-3.2.2-bin.tar.gz http://mirror.hosting90.cz/apache/maven/maven-3/3.2.2/binaries/apache-maven-3.2.2-bin.tar.gz
-RUN cd /usr/local && tar xzf /tmp/apache-maven-3.2.2-bin.tar.gz
-RUN ln -s /usr/local/apache-maven-3.2.2 /usr/local/maven
-RUN rm /tmp/apache-maven-3.2.2-bin.tar.gz
-ENV MAVEN_HOME /usr/local/maven
-ENV PATH $MAVEN_HOME/bin:$PATH
+# Set JAVA_HOME
+ENV JAVA_HOME /usr/
 
 # Clone the SimplePush Server
 RUN git clone https://github.com/aerogear/aerogear-simplepush-server /home/aerogear-simplepush-server
