@@ -17,7 +17,7 @@ RUN ln -s /opt/wildfly-8.1.0.Final /opt/wildfly
 RUN groupadd -r wildfly -g 433 && useradd -u 431 -r -g wildfly -d /opt/wildfly -s /sbin/nologin -c "WildFly user" wildfly
 
 # Change the owner of the /opt/wildfly directory
-RUN chown -R wildfly:wildfly /opt/wildfly/*
+RUN chown -R wildfly:wildfly /opt/wildfly*
 
 # Expose the ports we're interested in
 EXPOSE 8080 9990
