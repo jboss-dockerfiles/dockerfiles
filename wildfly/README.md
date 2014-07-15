@@ -23,7 +23,7 @@ With the WildFly server you can [deploy your application in multiple ways](https
 
 The most popular way of deploying an application is using the deployment scanner. In WildFly this method is enabled by default and the only thing you need to do is to place your application inside of the `deployments/` directory. It can be `/opt/wildfly/standalone/deployments/` or `/opt/wildfly/domain/deployments/` depending on [which mode](https://docs.jboss.org/author/display/WFLY8/Operating+modes) you choose (standalone is default in the `jboss/wildfly` image -- see above).
 
-The best way to deploy an application with the `jboss/wildfly` image is to extend it. Just place your application inside the `deployments/` directory with the `ADD` command. You can also do the changes to the configuration (if any) as additional steps (`RUN` command).
+The best way to deploy an application with the `jboss/wildfly` image is to extend it. Just place your application inside the `deployments/` directory with the `ADD` command. You can also do the changes to the configuration (if any) as additional steps (`RUN` command).  Make sure to include the trailing slash on the deployment folder path.
 
     FROM jboss/wildfly
     ADD your-awesome-app.war /opt/wildfly/standalone/deployments/
