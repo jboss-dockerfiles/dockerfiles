@@ -7,11 +7,17 @@ RUN yum -y install java-1.7.0-openjdk-devel
 # Clean the metadata
 RUN yum clean all
 
+# Set the WILDFLY_VERSION env variable
+ENV WILDFLY_VERSION 8.1.0.Final
+
 # Add the WildFly distribution to /opt
-RUN cd /opt && curl http://download.jboss.org/wildfly/8.1.0.Final/wildfly-8.1.0.Final.tar.gz | tar zx
+RUN cd /opt && curl http://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-$WILDFLY_VERSION.tar.gz | tar zx
 
 # Make sure the distribution is available from a well-known place
-RUN ln -s /opt/wildfly-8.1.0.Final /opt/wildfly
+RUN ln -s /opt/wildfly-$WILDFLY_VERSION /opt/wildfly
+
+# Set the JBOSS_HOME env variable
+ENV JBOSS_HOME /opt/wildfly
 
 # Create the wildfly user and group
 RUN groupadd -r wildfly -g 433 && useradd -u 431 -r -g wildfly -d /opt/wildfly -s /sbin/nologin -c "WildFly user" wildfly
