@@ -1,8 +1,9 @@
 # Use latest Fedora image as the base
 FROM fedora
 
-# Install java
-RUN yum -y install java-1.7.0-openjdk-devel
+# xmlstarlet is useful when modifying attributes/elements
+# saxon can be used to execute configuration transformation using XSLT
+RUN yum -y install java-1.7.0-openjdk-devel xmlstarlet saxon
 
 # Clean the metadata
 RUN yum clean all
