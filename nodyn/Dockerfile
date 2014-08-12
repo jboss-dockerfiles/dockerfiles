@@ -16,9 +16,6 @@ ENV NODYN_VERSION 0.1.1-20140811.131823-77-bin
 # General system variable setup
 ENV PATH $JAVA_HOME/bin:$M2_HOME/bin:$HOME/nodyn/bin:$PATH
 
-# Run everything below as root user
-USER root
-
 # Create the nodyn user
 RUN useradd -m nodyn -d /opt/nodyn -s /sbin/nologin
 
