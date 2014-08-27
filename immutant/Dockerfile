@@ -7,11 +7,14 @@ RUN yum -y install java-1.7.0-openjdk-devel unzip
 # Clean the metadata
 RUN yum clean all
 
+# Set the IMMUTANT_VERSION env variable
+ENV IMMUTANT_VERSION 1.1.4
+
 # Add Immutant
-RUN curl -o /opt/immutant.zip https://d33a59li2db06k.cloudfront.net/release/org/immutant/immutant-dist/1.1.3/immutant-dist-1.1.3-slim.zip
+RUN curl -o /opt/immutant.zip https://d33a59li2db06k.cloudfront.net/release/org/immutant/immutant-dist/$IMMUTANT_VERSION/immutant-dist-$IMMUTANT_VERSION-slim.zip
 
 # Unpack it
-RUN unzip -q -d /opt/ /opt/immutant.zip && mv /opt/immutant-1.1.3-slim /opt/immutant && rm /opt/immutant.zip 
+RUN unzip -q -d /opt/ /opt/immutant.zip && mv /opt/immutant-$IMMUTANT_VERSION-slim /opt/immutant && rm /opt/immutant.zip
 
 # Create the immutant user and group
 RUN groupadd -r immutant -g 413 && useradd -u 444 -r -g immutant -d /opt/immutant -s /sbin/nologin -c "Immutant user" immutant
