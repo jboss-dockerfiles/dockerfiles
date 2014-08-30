@@ -8,7 +8,7 @@ RUN yum -y update
 RUN yum -y install java-1.8.0-openjdk-devel wget && yum clean all
 
 # Add the LiveOak distribution to /opt
-RUN cd /opt && wget http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha01/liveoak-dist-1.0.0.Alpha01.tar.gz && tar -zxf liveoak-dist-1.0.0.Alpha01.tar.gz
+RUN cd /opt && wget http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha02/liveoak-dist-1.0.0.Alpha02.tar.gz && tar -zxf liveoak-dist-1.0.0.Alpha02.tar.gz
 
 # Create the wildfly user and group
 RUN groupadd -r liveoak -g 433 && useradd -u 431 -r -g liveoak -d /opt/liveoak -s /sbin/nologin -c "LiveOak user" liveoak
