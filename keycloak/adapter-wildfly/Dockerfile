@@ -1,7 +1,7 @@
 FROM jboss/wildfly
 MAINTAINER jpkroehling@redhat.com
 
-ENV KEYCLOAK_VERSION 1.0-rc-2
+ENV KEYCLOAK_VERSION 1.0-final
 
 USER root
 RUN yum install -y unzip && yum clean all
