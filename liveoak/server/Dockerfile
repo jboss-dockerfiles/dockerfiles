@@ -1,5 +1,9 @@
 FROM jboss/base
 
+USER root
+RUN yum -y install java-1.8.0-openjdk-devel && yum clean all
+USER jboss
+
 ENV LIVEOAK_VERSION 1.0.0.Alpha02
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0
 

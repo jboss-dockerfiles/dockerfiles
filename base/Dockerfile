@@ -8,7 +8,7 @@ RUN yum -y update && yum clean all
 # saxon can be used to execute configuration transformation using XSLT
 # augeas is a great tool to edit any configuration files (XML too)
 # bsdtar can be used to unpack zip files using pipes
-RUN yum -y install java-1.7.0-openjdk-devel java-1.8.0-openjdk-devel xmlstarlet saxon augeas bsdtar && yum clean all
+RUN yum -y install java-1.7.0-openjdk-devel xmlstarlet saxon augeas bsdtar && yum clean all
 
 # Create a user and group used to launch processes
 # The user ID 1000 is the default for the first "regular" user on Fedora/RHEL,
