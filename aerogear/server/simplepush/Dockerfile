@@ -1,6 +1,9 @@
 # Use latest Fedora image as the base
 FROM fedora
 
+# Update base image
+RUN yum -y update && yum clean all
+
 # Install maven, wget, and git
 RUN yum -q -y install maven wget git && yum -q clean all
 

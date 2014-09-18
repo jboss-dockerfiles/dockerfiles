@@ -2,6 +2,9 @@
 FROM fedora
 MAINTAINER Bruno Oliveira <bruno@abstractj.org>
 
+# Update base image
+RUN yum -y update && yum clean all
+
 # Install OpenJDK, unzip and clean the metadata
 RUN yum -q -y install java-1.7.0-openjdk-devel unzip && yum -q clean all
 
