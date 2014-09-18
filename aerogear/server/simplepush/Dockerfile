@@ -1,25 +1,27 @@
-# Use latest Fedora image as the base
-FROM fedora:latest
+# Use latest jboss/base image as the base
+FROM jboss/base
 
-# Update base image
-RUN yum -y update && yum clean all
+USER root
 
 # Install maven, wget, and git
-RUN yum -q -y install maven wget git && yum -q clean all
+RUN yum -y install maven wget git && yum clean all
 
-# Set JAVA_HOME
-ENV JAVA_HOME /usr/
+USER jboss
 
 # Clone the SimplePush Server
-RUN git clone https://github.com/aerogear/aerogear-simplepush-server /home/aerogear-simplepush-server
+RUN git clone https://github.com/aerogear/aerogear-simplepush-server aerogear-simplepush-server
+
+WORKDIR aerogear-simplepush-server
 
 # Run a Maven install when installing the image to avoid this cost of downloading the internet (all deps)
-RUN cd /home/aerogear-simplepush-server && mvn --quiet -DskipTests=true -Dmaven.javadoc.skip=true install
-RUN cd /home/aerogear-simplepush-server/server-netty && mvn --quiet dependency:resolve
-RUN cd /home/aerogear-simplepush-server/server-netty && mvn --quiet dependency:resolve-plugins -DincludeArtifactIds=commons-exec
+RUN mvn --quiet -DskipTests=true -Dmaven.javadoc.skip=true install
+
+WORKDIR server-netty
+
+RUN mvn --quiet dependency:resolve
+RUN mvn --quiet dependency:resolve-plugins -DincludeArtifactIds=commons-exec
 
 # Expose the port the SimplePush Server listens to
 EXPOSE 7777
 
-WORKDIR /home/aerogear-simplepush-server/server-netty
 CMD ["mvn", "exec:java"]
