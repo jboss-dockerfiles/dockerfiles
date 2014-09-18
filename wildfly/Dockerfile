@@ -1,14 +1,14 @@
 # Use latest Fedora image as the base
 FROM fedora
 
+# Update base image
+RUN yum -y update && yum clean all
+
 # xmlstarlet is useful when modifying attributes/elements
 # saxon can be used to execute configuration transformation using XSLT
 # augeas is a great tool to edit any configuration files (XML too)
 # bsdtar can be used to unpack zip files using pipes
-RUN yum -y install java-1.7.0-openjdk-devel xmlstarlet saxon augeas bsdtar
-
-# Clean the metadata
-RUN yum clean all
+RUN yum -y install java-1.7.0-openjdk-devel xmlstarlet saxon augeas bsdtar && yum clean all
 
 # Set the WILDFLY_VERSION env variable
 ENV WILDFLY_VERSION 8.1.0.Final
