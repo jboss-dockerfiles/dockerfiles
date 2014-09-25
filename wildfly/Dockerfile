@@ -9,6 +9,8 @@ RUN yum -y update && yum clean all
 # augeas is a great tool to edit any configuration files (XML too)
 # bsdtar can be used to unpack zip files using pipes
 RUN yum -y install java-1.7.0-openjdk-devel xmlstarlet saxon augeas bsdtar && yum clean all
+# http://www.openwall.com/lists/oss-security/2014/09/24/10
+RUN yum -y update bash --enablerepo=updates-testing && yum clean all
 
 # Set the WILDFLY_VERSION env variable
 ENV WILDFLY_VERSION 8.1.0.Final
