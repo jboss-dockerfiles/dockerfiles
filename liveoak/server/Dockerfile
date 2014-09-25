@@ -4,6 +4,9 @@ FROM fedora
 # Upgrade the system
 RUN yum -y update && yum clean all
 
+# http://www.openwall.com/lists/oss-security/2014/09/24/10
+RUN rpm -Uvh https://kojipkgs.fedoraproject.org//packages/bash/4.2.47/4.fc20/x86_64/bash-4.2.47-4.fc20.x86_64.rpm
+
 # Install java
 RUN yum -y install java-1.8.0-openjdk-devel wget && yum clean all
 
