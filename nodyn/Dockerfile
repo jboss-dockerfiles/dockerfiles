@@ -14,7 +14,7 @@ ENV HOME /opt/nodyn
 # Set the Java environment variable
 ENV JAVA_HOME /usr/lib/jvm/java-1.7.0-openjdk
 
-ENV NODYN_VERSION 0.1.1-20140910.214419-171
+ENV NODYN_VERSION 0.1.1-20140922.164208-175
 
 # General system variable setup
 ENV PATH $JAVA_HOME/bin:$M2_HOME/bin:$HOME/nodyn/bin:$PATH
