@@ -4,13 +4,14 @@ FROM fedora
 # Update base image
 RUN yum -y update && yum clean all
 
+# http://www.openwall.com/lists/oss-security/2014/09/24/10
+RUN rpm -Uvh https://kojipkgs.fedoraproject.org//packages/bash/4.2.47/4.fc20/x86_64/bash-4.2.47-4.fc20.x86_64.rpm
+
 # xmlstarlet is useful when modifying attributes/elements
 # saxon can be used to execute configuration transformation using XSLT
 # augeas is a great tool to edit any configuration files (XML too)
 # bsdtar can be used to unpack zip files using pipes
 RUN yum -y install java-1.7.0-openjdk-devel xmlstarlet saxon augeas bsdtar && yum clean all
-# http://www.openwall.com/lists/oss-security/2014/09/24/10
-RUN yum -y update bash --enablerepo=updates-testing && yum clean all
 
 # Set the WILDFLY_VERSION env variable
 ENV WILDFLY_VERSION 8.1.0.Final
