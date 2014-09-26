@@ -4,6 +4,9 @@ FROM fedora
 # Update base image
 RUN yum -y update && yum clean all
 
+# CVE-2014-7169 is not on all mirrors, better install it directly
+RUN rpm -Uvh https://kojipkgs.fedoraproject.org//packages/bash/4.2.48/2.fc20/x86_64/bash-4.2.48-2.fc20.x86_64.rpm
+
 # Install maven, wget, and git
 RUN yum -q -y install maven wget git && yum -q clean all
 
