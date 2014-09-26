@@ -4,9 +4,6 @@ FROM fedora
 # Update base image
 RUN yum -y update && yum clean all
 
-# http://www.openwall.com/lists/oss-security/2014/09/24/10
-RUN rpm -Uvh https://kojipkgs.fedoraproject.org//packages/bash/4.2.47/4.fc20/x86_64/bash-4.2.47-4.fc20.x86_64.rpm
-
 # Install maven, wget, and git
 RUN yum -q -y install maven wget git && yum -q clean all
 
