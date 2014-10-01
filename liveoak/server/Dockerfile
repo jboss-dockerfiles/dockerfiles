@@ -1,11 +1,8 @@
 # Use latest Fedora image as the base
-FROM fedora
+FROM fedora:latest
 
 # Upgrade the system
 RUN yum -y update && yum clean all
-
-# CVE-2014-7169 is not on all mirrors, better install it directly
-RUN rpm -Uvh https://kojipkgs.fedoraproject.org//packages/bash/4.2.48/2.fc20/x86_64/bash-4.2.48-2.fc20.x86_64.rpm
 
 # Install java
 RUN yum -y install java-1.8.0-openjdk-devel wget && yum clean all
