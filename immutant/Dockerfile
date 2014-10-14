@@ -1,11 +1,11 @@
 # Use latest Fedora image as the base
-FROM fedora
+FROM fedora:latest
+
+# Update base image
+RUN yum -y update && yum clean all
 
 # Install java
-RUN yum -y install java-1.7.0-openjdk-devel unzip
-
-# Clean the metadata
-RUN yum clean all
+RUN yum -y install java-1.7.0-openjdk-devel unzip && yum clean all
 
 # Set the IMMUTANT_VERSION env variable
 ENV IMMUTANT_VERSION 1.1.4

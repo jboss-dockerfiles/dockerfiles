@@ -1,8 +1,8 @@
 # Use latest Fedora image as the base
-FROM fedora
+FROM fedora:latest
 
 # Upgrade the system
-RUN yum -y update
+RUN yum -y update && yum clean all
 
 # Install java
 RUN yum -y install java-1.8.0-openjdk-devel wget && yum clean all

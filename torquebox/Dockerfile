@@ -1,14 +1,11 @@
 # Use latest Fedora image as the base
-FROM fedora
+FROM fedora:latest
 
-# Upgrade the system
-RUN yum -y update
+# Update base image
+RUN yum -y update && yum clean all
 
-# Install java
-RUN yum -y install java-1.7.0-openjdk-devel unzip
-
-# Clean the metadata
-RUN yum clean all
+# Install java and clean yum metadata post installation
+RUN yum -y install java-1.7.0-openjdk-devel unzip && yum clean all
 
 ENV TORQUEBOX_VERSION 3.1.1
 
