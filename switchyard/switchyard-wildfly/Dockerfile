@@ -1,7 +1,8 @@
 FROM jboss/wildfly
+MAINTAINER Jorge Morales <jmorales@redhat.com>
 
-ENV JBOSS_SY_VERSION 2.0.0.Alpha2
-ENV JBOSS_SY_VERSION_MAIN 2.0.Alpha2
+ENV JBOSS_SY_VERSION 2.0.0.Alpha3
+ENV JBOSS_SY_VERSION_MAIN 2.0.Alpha3
 
 #
 # Install switchyard
