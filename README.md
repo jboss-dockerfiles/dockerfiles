@@ -1,29 +1,29 @@
-# JBoss Dockerfiles
+# Moved!
 
-This repository contains examples of Dockerfiles that can be used to build Docker images with [JBoss Community projects](http://jboss.org/).
+The content of this repository was **moved** to the [`jboss-dockerfiles` organization on GitHub](https://github.com/jboss-dockerfiles). Now every project has it's own repository.
 
-## Usage
+## List of new repositories
 
-### Automated builds
+Below you can find a list of new repositories to which the content was moved.
 
-This repository is hooked with [docker.io automated builds feature](http://docs.docker.com/docker-hub/builds/). You can find the images under the `jboss` account: https://hub.docker.com/u/jboss/
+1. [aerogear](https://github.com/jboss-dockerfiles/aerogear)
+2. [immutant](https://github.com/jboss-dockerfiles/immutant)
+3. [keycloak](https://github.com/jboss-dockerfiles/keycloak)
+4. [liveoak](https://github.com/jboss-dockerfiles/liveoak)
+5. [modeshape](https://github.com/jboss-dockerfiles/modeshape)
+6. [nodyn](https://github.com/jboss-dockerfiles/nodyn)
+7. [switchyard](https://github.com/jboss-dockerfiles/switchyard)
+8. [torquebox](https://github.com/jboss-dockerfiles/torquebox)
+9. [wildfly](https://github.com/jboss-dockerfiles/wildfly)
 
-### Building locally
+## Reasoning
 
-You can assume that running following command should build the image for you:
+There are a few reasons behind the move:
 
-    docker build .
+1. This will let us properly tag images, so you could stick to some version of the image.
+2. Issues will be reported agains particular image, this will make it clear which image is affected.
 
-If it fails, please take a look at the `README.md`, there may be some instructions how to build it. If you think you found an issue -- [let us know](https://github.com/jboss/dockerfiles/issues/new).
+## Issues
 
-### Running
+All issues and feture requests **must be** now filled in the appropriate repository. Issue feature for this repository was **disabled**.
 
-Every image is different. See instructions in `README.md` located next to the `Dockerfile` you want to build.
-
-## Contribution
-
-You don't see your project here? Just create a pull request -- we're happy to merge it. If you need help with creating the `Dockerfile` for tour project -- just open an issue and we'll see what we can do :) 
-
-## License
-
-All files listed in this repository are licensed under [MIT license](http://opensource.org/licenses/MIT).
