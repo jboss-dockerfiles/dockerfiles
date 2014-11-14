@@ -6,15 +6,16 @@ The content of this repository was **moved** to the [`jboss-dockerfiles` organiz
 
 Below you can find a list of new repositories to which the content was moved.
 
-1. [aerogear](https://github.com/jboss-dockerfiles/aerogear)
-2. [immutant](https://github.com/jboss-dockerfiles/immutant)
-3. [keycloak](https://github.com/jboss-dockerfiles/keycloak)
-4. [liveoak](https://github.com/jboss-dockerfiles/liveoak)
-5. [modeshape](https://github.com/jboss-dockerfiles/modeshape)
-6. [nodyn](https://github.com/jboss-dockerfiles/nodyn)
-7. [switchyard](https://github.com/jboss-dockerfiles/switchyard)
-8. [torquebox](https://github.com/jboss-dockerfiles/torquebox)
-9. [wildfly](https://github.com/jboss-dockerfiles/wildfly)
+1.  [aerogear](https://github.com/jboss-dockerfiles/aerogear)
+2.  [immutant](https://github.com/jboss-dockerfiles/immutant)
+3.  [keycloak](https://github.com/jboss-dockerfiles/keycloak)
+4.  [liveoak](https://github.com/jboss-dockerfiles/liveoak)
+5.  [modeshape](https://github.com/jboss-dockerfiles/modeshape)
+6.  [nodyn](https://github.com/jboss-dockerfiles/nodyn)
+7.  [switchyard](https://github.com/jboss-dockerfiles/switchyard)
+8.  [torquebox](https://github.com/jboss-dockerfiles/torquebox)
+9.  [wildfly](https://github.com/jboss-dockerfiles/wildfly)
+10. [infinispan](https://github.com/jboss-dockerfiles/infinispan)
 
 ## Reasoning
 
